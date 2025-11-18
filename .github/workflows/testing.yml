@@ -1,0 +1,39 @@
+name: Unit and Funtional Test Job
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  unit-test:
+    name: unit test
+    runs-on: "ubuntu-latest"
+
+    defaults:
+      run:
+        shell: bash -el {0}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Conda 
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: fsds
+          environment-file: deploy/conda/fsds-env.yml  # Path to your Conda environment file
+          python-version: 3.11  # Ensure this matches the Python version in your env.yml
+          auto-update-conda: true
+      - name: Create required directories
+        run: |
+          mkdir -p datasets/housing
+          mkdir -p models
+          mkdir -p models/metrics
+          touch models/best_model.pkl
+      - name: Run unit tests
+        run: |
+          conda activate fsds
+          pip install -e .
+          pytest tests/unit_tests 
+
