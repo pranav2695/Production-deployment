@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fsds"
+version = "0.1"
+authors = [
+  { name="Koushik Khan", email="koushik.khan@tigeranalytics.com" },
+]
+maintainers = [
+  { name="Pranav Tyagi", email="pranav.tyagin@tigeranalytics.com" }
+]
+description = "A package for developing an end-to-end machine learning workflow"
+readme = "README.md"
+license = {text = "MIT License"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy==1.26.4",
+    "black==25.1.0",
+    "isort==6.0.0",
+    "flake8==7.1.1",
+    "build>=1.2.2.post1",
+    "setuptools>=75.8.0",
+    "wheel>=0.45.1",
+]
+
+[project.urls]
+Repository = "https://github.com/koushik-ta/tamlep-workshop-1.git"
+Issues = "https://github.com/koushik-ta/tamlep-workshop-1/issues"
