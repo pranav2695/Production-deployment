@@ -6,7 +6,8 @@ from fsds.score import score_model
 from fsds.utils import log, setup_logger
 
 
-def main(input_data_path, model_path, output_path, log_level, log_path, no_console_log):
+def main(input_data_path, model_path, output_path, log_level, log_path, 
+         no_console_log):
     # Use local folder-based MLflow tracking to ./mlartifacts
     mlflow.set_tracking_uri(uri="file:./mlartifacts")
     exp_name = "fsds-score"

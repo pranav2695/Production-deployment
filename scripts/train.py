@@ -56,7 +56,8 @@ if __name__ == "__main__":
         help="Logging level (DEBUG, INFO, WARNING, ERROR)",
     )
     parser.add_argument(
-        "--log-path", type=str, default=None, help="Optional path to a log file"
+        "--log-path", type=str, default=None, 
+        help="Optional path to a log file"
     )
     parser.add_argument(
         "--no-console-log", action="store_true", help="Disable console logging"

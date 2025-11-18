@@ -13,7 +13,8 @@ def main(use_mlflow):
     row_count = df.count()
     # Training the model
     params, model = train_and_save_model(
-        model_path="models/best_model.pkl", input_data_path="./datasets/housing"
+        model_path="models/best_model.pkl", 
+        input_data_path="./datasets/housing"
     )
     # Scoring of the model
     rmse = score_model(

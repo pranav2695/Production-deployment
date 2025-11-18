@@ -15,7 +15,8 @@ def setup_logger(log_level="INFO", log_path=None, console_log=True):
     # If log_path is provided, set up the file handler
     if log_path:
         log_dir = os.path.dirname(log_path)
-        os.makedirs(log_dir, exist_ok=True)  # Make sure the log directory exists
+        # Make sure the log directory exists
+        os.makedirs(log_dir, exist_ok=True)  
         file_handler = logging.FileHandler(log_path)
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
